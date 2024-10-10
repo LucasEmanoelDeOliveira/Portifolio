@@ -253,6 +253,7 @@ main {
 .project-preview > img:hover {
     box-shadow: 0px 0px 30px rgba(8, 8, 8, 0.565);
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 #projects-container-preview {
