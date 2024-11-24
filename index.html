@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portifólio de Lucio</title>
+</head>
+<body>
+    <header>
+        <img src="images/DISCORD_LOGO.webp" alt="DISCORD_LOGO">
+        <h1>L.U.C.I.O</h1>
+        <nav>
+            <ul><button class="scrollToSection" data-target="#header-container">INICIO</button></ul>
+            <ul><button class="scrollToSection" data-target="#first-bots">BOTS</button></ul>
+            <ul><button class="scrollToSection" data-target="#abouts-containers">SOBRE</button></ul>
+            <ul><button class="scrollToSection" data-target="#footer-container">SUPORTE</button></ul>
+        </nav>
+    </header>
+
+    <div id="header-container">
+        <img src="images/BACKGROUND.png" alt="BACKGROUND">
+        <div id="developer-container">
+            <img src="images/DEVELOPER_IMAGE.png" alt="DEVELOPER_IMAGE">
+            <div id="text-content">
+                <p>Um jovem de 15 Anos que está a procura de sempre melhorar oque pode, juntamente com sua bela capacidade de imaginar coisas que eram "inimaginaveis" desde então.</p>
+            </div>
+            <div id="habilitys-shower"></div>
+        </div>
+        <div id="bot-card">
+            <div id="chat-container">
+                <div id="chat-box"></div>
+                <div id="input-container">
+                    <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                    <button id="send-btn">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="toggle-chat">➤</button> <!-- Rabicó -->
+    </div>
+
+    <main id="main-container">
+        <h1>’’Transformamos sonhos digitais em realidade, uma linha de código por vez.‚‚</h1>
+        <div id="first-bots">
+            <h3>⁀ PROJETOS ‿</h3>
+            <div id="bots-cards"></div>
+        </div>
+    
+        <div id="abouts-containers"></div>
+    </main>
+
+    <div class="mini-container">
+        <p></p>
+    </div>
+
+    <footer>
+        <div id="footer-container">
+            <h1>‿ F.A.Q ⁀</h1>
+
+            <div id="footers-faqs"></div>
+        </div>
+    </footer>
+
+    <div id="end">
+        <p>Agradeço por ler e ver meu Portifólio.<br>Que Deus abençoe, e até a proxima.<br>ATENCIOSAMENTE, LUCAS EMANOEL DE OLIVEIRA.</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.scrollToSection').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetSection = document.querySelector(button.getAttribute('data-target'));
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+    <script src="js/BOTSCARDS.js"></script>
+    <script src="js/ABOUT.js"></script>
+    <script src="js/FAQ.js"></script>
+    <script type="module" src="./js/IA.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+</body>
+</html>
