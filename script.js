@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 const toggleChatButton = document.getElementById('toggle-chat');
 const chatContainer = document.getElementById('bot-card');
 
