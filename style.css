@@ -22,14 +22,14 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.48);
 }
 
 header > img {
     height: auto;
-    width: 100px;
+    width: 150px;
     padding: 30px;
 }
 
@@ -192,13 +192,13 @@ header > nav > ul > button {
 #chat-box div {
     margin: 5px 0;
     padding: 5px 10px;
-    border-radius: 10px;
 }
 
 .user-message {
     background: #818181;
     text-align: right;
     color: white;
+    border-radius: 10px;
 }
 
 .bot-message {
@@ -207,6 +207,7 @@ header > nav > ul > button {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: white;
+    border-radius: 10px;
 }
 
 #input-container {
@@ -455,9 +456,16 @@ footer > #footer-container {
 }
 
 @media (max-width: 768px) {
+
+    #abouts-containers {
+        justify-content: center;
+        align-items: center;
+    }
+
     #abouts-containers > .about-container {
+        display: flex;
         flex-direction: column;
-        height: auto;
+        justify-content: center;
     }
 
     .about-container > img {
@@ -472,11 +480,12 @@ footer > #footer-container {
     }
 
     .about-container > #text-content {
+        justify-content: center;
         z-index: 2;
         text-align: center;
         padding: 20px;
         margin: 0;
-        width: 90%;
+        width: 100%;
     }
 
     #text-content > p {
@@ -513,6 +522,7 @@ footer > #footer-container {
     padding: 10px;
     border-radius: 8px;
     background-color: #0000007e; 
+    text-align: center;
 }
 
 .services-column h3 {
@@ -569,7 +579,7 @@ footer > #footer-container {
     white-space: normal;
     pointer-events: none;
 
-    transform: translatey(10px);
+    transform: translateY(10px);
 }
 
 .about:hover + .mini-container {
@@ -579,6 +589,11 @@ footer > #footer-container {
 
 .underline {
     text-decoration: underline;
+}
+
+.new-product::after {
+    content: " (⭐)";
+    color: #ffcc00;
 }
 
 .external-link::after {
@@ -593,23 +608,23 @@ footer > #footer-container {
     animation: jump 0.3s ease; /* Aplica o pulinho */
 }
 
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); rotate: -5deg; }
+    50% { transform: translateX(5px); rotate: 5deg; }
+    75% { transform: translateX(-5px); rotate: -5deg; }
+    100% { transform: translateX(0); }
+}
+
 @keyframes jump {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); } /* Sobe */
-    100% { transform: translateY(0); } /* Volta */
+    50% { transform: translateY(-10px); } 
+    100% { transform: translateY(0); }
 }
-
-@keyframes slide-in-right {
-    from {
-        transform: translateX(100%); /* Começa fora da tela, à direita */
-        opacity: 0; /* Invisível no início */
-    }
-    to {
-        transform: translateX(0); /* Termina na posição original */
-        opacity: 1; /* Totalmente visível */
-    }
-}
-
 
 @keyframes floating {
     0% {

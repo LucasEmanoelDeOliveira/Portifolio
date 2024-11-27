@@ -92,6 +92,7 @@ const aboutsData = [
                     <p class="about" data-info="Sistema de brincadeiras com Webhook (boliche, etc)">Brincadeiras com Webhook</p>
                     <p class="about" data-info="Sistema de contagem para algo Legal (um evento aguardado)">Contagem Regressiva para Eventos</p>
                     <p class="about" data-info="Sistema para registrar personagem na HOUSE.">Registrar Personagem</p>
+                    <p class="about new-product" data-info="Sistema para dar a um usuário um cargo por um periodo de tempo">Cargo temporario</p>
                 </div>
             </div>
             <p style='font-size: 0.6em;'>(Caso tenha duvidas sobre um sistema, passe o Mouse por cima do comando desejado)</p>
@@ -219,24 +220,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const triggerGasterEffect = (icon) => {
         const smallImg = document.createElement('img');
-        smallImg.src = 'images/EASTEREGGS/sas/Gaster/Gaster_1.png';
+        smallImg.src = 'images/EASTEREGGS/sas/Gaster/Gaster_1.svg';
         smallImg.alt = 'Easter Egg';
 
         Object.assign(smallImg.style, {
             position: 'fixed',
-            top: '50%',
-            right: '-200px',
-            transform: 'translateY(-50%)',
+            top: '50%',  // Centraliza verticalmente
+            left: '50%', // Centraliza horizontalmente
+            transform: 'translate(-50%, -50%)', // Ajuste fino para centralização perfeita
             width: '500px',
             height: 'auto',
             zIndex: '1000',
-            transition: 'right 1s ease-out'
-        });
+        });        
 
         document.body.appendChild(smallImg);
         setTimeout(() => (smallImg.style.right = '0'), 50);
 
-        setTimeout(() => (smallImg.src = 'images/EASTEREGGS/sas/Gaster/Gaster_2.png'), 2000);
+        setTimeout(() => (smallImg.src = 'images/EASTEREGGS/sas/Gaster/Gaster_2.svg'), 2000);
 
         setTimeout(() => {
             const whiteEffect = document.createElement('div');

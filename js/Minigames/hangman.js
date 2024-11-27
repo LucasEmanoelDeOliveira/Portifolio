@@ -36,11 +36,11 @@ const words = [
     "zebra", "zoológico", "zero", "zangão", "zarabatana"      // Z
   ];
   const dummyParts = [
-    "|      \u{1F3A9}", // 🎩 - chapéu
-    "|      \u{1F641}", // 🙁 - rosto triste
-    "|      \u{1F455}", // 👕 - camisa
-    "|      \u{1F456}", // 👖 - calça
-    "|     \u{1F97E}\u{1F97E}", // 🥾 - botas
+    "|      \u{1F3A9}<br>", // 🎩 - chapéu
+    "|      \u{1F641}<br>", // 🙁 - rosto triste
+    "|      \u{1F455}<br>", // 👕 - camisa
+    "|      \u{1F456}<br>", // 👖 - calça
+    "|     \u{1F97E}\u{1F97E}<br>", // 🥾 - botas
 ];
 
 export function startHangman() {
@@ -49,7 +49,7 @@ export function startHangman() {
     hangmanState.displayWord = "_".repeat(hangmanState.word.length);
     hangmanState.attemptsLeft = 6;
     hangmanState.guessedLetters = [];
-    hangmanState.dummyState = ["___________", "|", "|", "|", "|", "|"];
+    hangmanState.dummyState = ["______<br>", "|<br>", "|<br>", "|<br>", "|<br>"];
     hangmanState.active = true;
 
     return {
