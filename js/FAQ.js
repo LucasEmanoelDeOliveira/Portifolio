@@ -15,7 +15,8 @@ const faqData = [
         Você pode comprar me mandando um Alo no meu Discord: <span class='highlight_2'>apenaslucio</span>.<br><br>
         ou você pode entrar em um dos servidores abaixo:<br>
         <span class='highlight_2'><a href='https://discord.gg/S6CV38SqG8' target='_blank'>Darlings of Commerce</a></span><br>
-        <span class='highlight_2'><a href='https://discord.gg/VyVP6XuxPn' target='_blank'>Kattoli's Store</a></span>`
+        <span class='highlight_2'><a href='https://discord.gg/VyVP6XuxPn' target='_blank'>Kattoli's Store</a></span><br>
+        <span class='highlight_2'><a href='https://discord.gg/Xr6DxRRPXU' target='_blank'>Starry Shop</a></span><br>`
     },
     {
         title: "\"QUANTO TEMPO DEMORA?\"",

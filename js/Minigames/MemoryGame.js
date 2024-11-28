@@ -68,7 +68,7 @@ export function startMemoryGame() {
             document.querySelectorAll(".memory-button").forEach((button) => {
                 button.textContent = "❓"; // Esconde os emojis novamente
             });
-        }, 30000);
+        }, 3000);
     }, 1000);
 
     return {
