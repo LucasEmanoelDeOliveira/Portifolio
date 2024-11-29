@@ -3,10 +3,10 @@ const faqData = [
         title: "\"QUAIS SÃO SEUS PREÇOS?\"",
         subtitle: "valores",
         description: `
-        <span class='highlight_2'>BOTS'S - </span> 12.00R$ mensais, esse dinheiro será redirecionado a Host e outras coisas para manter o Bot On-Line.<br>
-        <span class='highlight_2'>SITE'S - </span> 30.00R$ como mão de Obra e 12.00R$ mensais para manter o Site On-line.<br><br>
-        OBS: se você desejar além de 3 sistemas, o preço do Bot somará +4.00R$<br>
-        FÓRMULA: P=12+4×(x−3)`
+        <span class='highlight_2'>BOTS'S - </span> 15.00R$ mensais, esse dinheiro será redirecionado a Host e outras coisas para manter o Bot On-Line.<br>
+        <span class='highlight_2'>SITE'S - </span> 50.00R$ como mão de Obra e 15.00R$ mensais para manter o Site On-line.<br><br>
+        OBS: se você desejar além de 3 sistemas, o preço do Bot somará +5.00R$<br>
+        FÓRMULA: P= 15 + 5 . (X − 3)`
     },
     {
         title: "\"COMO COMPRO?\"",

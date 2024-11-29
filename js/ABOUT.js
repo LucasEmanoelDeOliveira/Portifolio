@@ -54,48 +54,116 @@ const aboutsData = [
         description: `
             Eu faço Bots e Sites <span class='highlight'>100%</span> do seu jeitinho, desde a última vírgula até a primeira linha de "Hello World" !!<br>
             Veja abaixo a Listas de sistemas que posso inserir no seu Bot:<br>
-            <div class="services-grid">
-                <div class="services-column">
-                    <h3>LOJA</h3>
-                    <p class="about" data-info="Embeds para abrir Tickets.">Ticket</p>
-                    <p class="about" data-info="Cadastrar algum produto a venda.">Cadastro de Produtos</p>
-                    <p class="about" data-info="Notificar Promoções aos membros na DM/CANAL.">Notificação de Promoções</p>
-                    <p class="about" data-info="Gerenciar pedidos de compras.">Gerenciamento de Pedidos</p>
-                    <p class="about" data-info="Sistema de Cupons.">Cupons/Descontos</p>
-                    <p class="about" data-info="Recomenda produtos após a compra.">Recomendação de Produtos</p>
-                    <p class="about" data-info="Rastreia pedidos (Como Comprovante, Data, etc.)">Rastreamento de Pedidos</p>
-                    <p class="about" data-info="Sistemas de Feedback com estrelinhas.">Feedback / Avaliações</p>
-                    <p class="about" data-info="Recomenda produtos enquanto a compra é feita.">Produtos Relacionados</p>
-                    <p class="about" data-info="Informa um novo produto no estoque.">Produto Disponível</p>
-                    <p class="about" data-info="Sistema de cadastração de Vip.">Cadastro de VIP</p>
-                    <p class="about" data-info="Mostra os produtos mais vendidos do mês.">Estatísticas de Venda</p>
-                    <p class="about" data-info="Ajuda o cliente com a compra.">Assistente Virtual</p>
-                    <p class="about" data-info="Nome alto explicativo.">Carrinho de Compras</p>
+            <div class="services">
+                <div class="topic">
+                    <h3 class="topic-title">COMUNIDADE</h3>
+                    <div class="categories">
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat1">Gerenciamento</h4>
+                            <ul class="commands" id="cat1">
+                                <p class="about highlight_2 underline " data-info="Sistema de Boas Vindas & Despedidas em um canal especifico.">Boas vindas/Despedida</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de inserir cargo automaticamente.">Auto-Role</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Re-Captcha para novos usuários.">Re-Captcha</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para enviar uma mensagem automática no Privado do usuário.">Mensagem Automatica</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat2">Moderação</h4>
+                            <ul class="commands" id="cat2">
+                                <p class="about highlight_2 underline " data-info="Sistema de Banimento temporário ou permanente.">Ban</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Avisos antes de tomar uma punição.">Warn</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Bloquear um usuário de mandar Mensagem.">Mute</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Expulsar um usuário do Servidor.">Kick</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para criar Sorteios no Servidor.">Sorteio</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para AMENIZAR uma invasão no Servidor.">Anti-Raid</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Limpar as mensagens de um Canal.">Clear</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Trancar um Canal especifico.">Lock</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de detecção de Palavras Ofensivas, links ou Spam.">Auto-Mod</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Renomear um nome de um Canal.">Rename Channel</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para adicionar um Atraso no envio de cada Mensagem.">Slowmode</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Desbanir um usuário do Servidor.">Unban</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Desmutar um usuário do Servidor.">Unmute</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Abrir um Canal Especifico.">Unlock</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para criação de Tickets de Suporte.">Ticket</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para SALVAR os canais, cargos, e permissões.">Backup</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat3">Engajamento</h4>
+                            <ul class="commands" id="cat3">
+                                <p class="about highlight_2 underline " data-info="Sistema de recompensa por mandar mensagens.">XP</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de ver quais são os usuários mais XP's.">Rank</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para dar Missões diárias aos Usuários (EX.: Mandar 10 Mensagens, em troca ganhara 100 XP's).">Missões Diárias</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para fazer o Bot responder a mensagens especificas.">Respostas</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para conceder XP's a quem der saudações para novos membros.">Apoio a Novos Membros</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para destacar membros que chegaram a metas especificas (EX.: Usuário X foi o primeiro a bater 1M de Mensagens).">Mural</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para quando o Chat estiver muito parado, o Bot fazer alguma pergunta sobre Alguma coisa, como Filmes, Séries, Animes, Etc.">Conversa</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para o Bot enviar mensagens divertidas aleatoriamente (EX.: Uma pergunta sobre algo, e o primeiro a responder corretamente, ganhará 500 XP's).">Eventos Aleátorios</p>
+                                <p class="about highlight_2 underline " data-info="Conceder distintivos ou troféus por conquistas no servidor (EX.: Prêmio por ficar 1 ano no servidor).">Troféus</p>
+                                <p class="about highlight_2 underline " data-info="Sistema de Convites para Recompensas ou Parabenização.">Convites</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat5">Entreterimento</h4>
+                            <ul class="commands" id="cat5">
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve se juntar os blocos até chegar a 2048.">2048</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve escrever rápidamente alguma palavra.">FastyType</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde você pode pescar algum peixe.">Fishy</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve adivinhar a palavra antes do boneco ficar completo.">Forca</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve ganhar do Bot no PPT.">Pedra, Papel, Tesoura</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve controlar a cobrinha.">Snake</p>
+                            <p class='about highlight_2 underline' data-info="Jogo onde deve fazer uma linha reta com 3 simbulos consecutivos.">TicTacToe</p>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="services-column">
-                    <h3>COMUNIDADE</h3>
-                    <p class="about" data-info="Sistema de Registro personalizado.">Registro</p>
-                    <p class="about" data-info="Sistema de Criação de Embed personalizada.">Embed Customizada</p>
-                    <p class="about" data-info="Sistema de Boas Vindas & Despedidas Personalizada">Boas Vindas e Despedida</p>
-                    <p class="about" data-info="Sistema de mostrar os membros mais ativos.">Membros da Semana/Mês</p>
-                    <p class="about" data-info="Sistema de rank para os membros mais ativos.">Sistema de Rank</p>
-                    <p class="about" data-info="Sistema de XP com recompensa (um cargo, algo similar)">Sistema de XP</p>
-                    <p class="about" data-info="Sistemas com Mini jogos (forca, tictactoe, snake, etc...)">Mini-Jogos</p>
-                    <p class="about" data-info="Sistema de enquete.">Enquetes</p>
-                    <p class="about" data-info="Sistema avançado de Anti-Raid">Anti-Raid</p>
-                    <p class="about" data-info="Sistema de Captcha.">Sistema Re-Captcha</p>
-                    <p class="about" data-info="Sistema avançado de ReCaptcha">Sistema Re-Captcha +</p>
-                    <p class="about" data-info="Sistema de Economia Local">Sistema de Economia</p>
-                    <p class="about" data-info="Sistema de inatividade por motivo.">AFK</p>
-                    <p class="about" data-info="Sistema de recompensa por convite.">Convite Premiado</p>
-                    <p class="about" data-info="Sistema de ver perfil personalizado.">Perfil</p>
-                    <p class="about" data-info="Sistema de brincadeiras com Webhook (boliche, etc)">Brincadeiras com Webhook</p>
-                    <p class="about" data-info="Sistema de contagem para algo Legal (um evento aguardado)">Contagem Regressiva para Eventos</p>
-                    <p class="about" data-info="Sistema para registrar personagem na HOUSE.">Registrar Personagem</p>
-                    <p class="about new-product" data-info="Sistema para dar a um usuário um cargo por um periodo de tempo">Cargo temporario</p>
+                <div class="topic">
+                    <h3 class="topic-title">LOJA</h3>
+                    <div class="categories">
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat6">Catálogo</h4>
+                            <ul class="commands" id="cat6">
+                                <p class="about highlight_2 underline " data-info="Sistema para abrir Tickets de Compras.">Ticket</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Visualizar um Produto com Descrição, Preço e Imagem.">Visualizar Produtos</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Pesquisar um Produto.">Pesquisar</p>
+                                <p class="about highlight_2 underline " data-info="Sistema para Mostrar detalhes de um Item, como Raridade, Origem, etc.">Detalhes</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para Mostrar os Produtos mais vendidos do Dia, ou produtos com Promoções.">Destaques</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat7">Compras</h4>
+                            <ul class="commands" id="cat7">
+                                <p class='about highlight_2 underline' data-info="Sistemas para Adicionar produtos ao Carrinho Virtual (Adicionar, Remover, Visualizar).">Carrinho</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para verificar se o pagaento foi feito com sucesso <span class='highlight'>(VÁLIDO APENAS PARA QUEM POSSUI MERCADO PAGO)</span>.">Verificar Pagamento</p>
+                                <p class='about highlight_2 underline' data-info="Sistema de Cupom especificos na Compra.">Cupoms</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para entregar <span class='highlight'>Links de Nitro ou Codigos como GooglePlay.<span>">Entregar</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para finalizar uma Compra com uma Embed Customizada.">Finalizar</p>
+                                <p class='about highlight_2 underline' data-info="Rastreie alguma compra ou alguma transação.">Rastrear</p>
+                                <p class='about highlight_2 underline' data-info="Sistema Extra de segurança antes de prosseguir ao pagamento (EX.: V2E, Codigo de Confirmação, Etc.).">Segurança Extra</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat8">Recompensas</h4>
+                            <ul class="commands" id="cat8">
+                                <p class='about highlight_2 underline' data-info="Sistema para recompensar o usuário que comprou muitas vezes.">Compras Repetitivas</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para dar ofertas para o usuário.">Ofertas</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para Recomendar outros Produtos durante a compra.">Recomendação</p>
+                                <p class='about highlight_2 underline' data-info="Sistema de acumulação de Pontos de Fidelidade para trocar por Descontos ou outros produtos.">Fidelidade</p>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4 class="category-title" data-category="cat9">Feedback</h4>
+                            <ul class="commands" id="cat9">
+                                <p class='about highlight_2 underline' data-info="Sistema para permitir o usuário colocar um comentário no produto.">Avaliações</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para mostrar os comentários do Produto.">Comentários</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para mostrar a classificação de um Produto.">Classificação</p>
+                                <p class='about highlight_2 underline' data-info="Sistema para informar alguma melhoria no sistema.">Feedback</p>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p style='font-size: 0.6em;'>(Caso tenha duvidas sobre um sistema, passe o Mouse por cima do comando desejado)</p>
+            <p style='font-size: 0.6em; text-align: center;'>Clique em cima das frases com a <span class='underline'>UNDERLINE (tracinho)</span></p>
         `
     },
     {
@@ -155,42 +223,6 @@ aboutsData.forEach((about, index) => {
 
     aboutsContainers.appendChild(aboutContainer);
 });
-
-
-const miniContainer = document.createElement('div');
-miniContainer.classList.add('mini-container');
-document.body.appendChild(miniContainer);
-
-// Adiciona o evento de mouse enter para cada elemento com a classe .about
-const aboutWords = document.querySelectorAll('.about');
-
-aboutWords.forEach(aboutWord => {
-    aboutWord.addEventListener('mouseenter', (event) => {
-        miniContainer.style.display = 'block';
-
-        const info = event.target.getAttribute('data-info');
-        miniContainer.innerHTML = info;
-
-        const rect = event.target.getBoundingClientRect();
-
-        // Define o mini-container abaixo do elemento
-        miniContainer.style.left = `${rect.left + window.scrollX}px`;
-        miniContainer.style.top = `${rect.bottom + window.scrollY + 5}px`; // Ajusta para aparecer logo abaixo
-    });
-
-    aboutWord.addEventListener('mouseleave', () => {
-        miniContainer.style.display = 'none';
-    });
-});
-
-miniContainer.addEventListener('mouseenter', () => {
-    miniContainer.style.display = 'block';
-});
-
-miniContainer.addEventListener('mouseleave', () => {
-    miniContainer.style.display = 'none';
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
     let timePlayed = 0;

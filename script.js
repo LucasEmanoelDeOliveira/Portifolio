@@ -33,6 +33,73 @@ document.addEventListener("DOMContentLoaded", () => {
             progress.style.width = `${percentage}%`;
         }, 100);
     });
+
+    document.querySelectorAll('.category-title').forEach(category => {
+        category.addEventListener('click', () => {
+            const categoryId = category.dataset.category;
+            const commands = document.getElementById(categoryId);
+    
+            if (!commands) {
+                console.error(`Elemento com ID "${categoryId}" não encontrado.`);
+                return;
+            }
+    
+            console.log(`Categoria clicada: ${categoryId}`);
+    
+            // Esconder todos os comandos, exceto o atual
+            document.querySelectorAll('.commands').forEach(cmd => {
+                if (cmd !== commands) {
+                    cmd.style.display = 'none';
+                    console.log(`Escondendo: ${cmd.id}`);
+                }
+            });
+    
+            // Alternar o display da categoria clicada
+            if (window.getComputedStyle(commands).display === 'none') {
+                commands.style.display = 'block';
+                console.log(`Exibindo: ${commands.id}`);
+            } else {
+                commands.style.display = 'none';
+                console.log(`Escondendo: ${commands.id}`);
+            }
+        });
+    });
+
+
+    const miniContainer = document.createElement('div');
+    miniContainer.classList.add('mini-container');
+    document.body.appendChild(miniContainer);
+    
+    const aboutWords = document.querySelectorAll('.about');
+    
+    aboutWords.forEach(aboutWord => {
+        aboutWord.addEventListener('mouseenter', (event) => {
+            miniContainer.style.display = 'block';
+    
+            const info = event.target.getAttribute('data-info');
+            miniContainer.innerHTML = info;
+    
+            const rect = event.target.getBoundingClientRect();
+    
+            // Define o mini-container abaixo do elemento
+            miniContainer.style.left = `${rect.left + window.scrollX}px`;
+            miniContainer.style.top = `${rect.bottom + window.scrollY + 5}px`; // Ajusta para aparecer logo abaixo
+        });
+    
+        aboutWord.addEventListener('mouseleave', () => {
+            miniContainer.style.display = 'none';
+        });
+    });
+    
+    miniContainer.addEventListener('mouseenter', () => {
+        miniContainer.style.display = 'block';
+    });
+    
+    miniContainer.addEventListener('mouseleave', () => {
+        miniContainer.style.display = 'none';
+    });
+    
+    
 });
 
 
