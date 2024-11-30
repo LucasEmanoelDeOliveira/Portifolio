@@ -13,9 +13,9 @@ const bots = [
     },
     {
         img: "images/BOTS/Katolli.png",
-        title: "KATOLLI'S BOT",
+        title: "LUNAS'S TRADES",
         subtitle: "Gerenciador de Servidores",
-        description: "Katolli\'s Bot é o BOT oficial de um grande servidor chamado \"Katoll\'sStore\".<br>Com uma velocidade absurda e precisão, Katolli's Bot é capaz de fazer Atendimentos Automaticos, Abrir e fechar a loja em determinados horários, Etc..."
+        description: "Luna\'s Trades é o BOT oficial de um grande servidor chamado \"Katoll\'sStore\".<br>Com uma velocidade absurda e precisão, Katolli's Bot é capaz de fazer Atendimentos Automaticos, Abrir e fechar a loja em determinados horários, Etc..."
     },
     {
         img: "images/BOTS/Starry.png",
