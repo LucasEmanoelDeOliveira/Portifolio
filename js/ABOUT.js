@@ -37,6 +37,8 @@ const aboutsData = [
         subtitle: "SITES",
         description: `
         Claro, para me aprofundar mais ainda nos sistemas novos, eu crio projetos Pessoais para estudar e trazer tudo do bom e do melhor para os Visitantes, veja meus projetos Abaixo:<br><br>
+        <a href='https://lucasemanoeldeoliveira.github.io/LojaMM2/' target="_blank"><span class='highlight_2 external-link'>MM2 SHOP WEBSITE</span></a>
+        <img src="images/EASTEREGGS/mm2.png" alt="Play Sound" data-sound='mm2' class="sound-icon" style="width: 40px; height: 40px; cursor: pointer; object-fit: contain;"><br>
         <a href='https://lucasemanoeldeoliveira.github.io/Undertale/' target="_blank"><span class='highlight_2 external-link'>UNDERTALE WEBSITE</span></a>
         <img src="images/EASTEREGGS/sas/sas.png" alt="Play Sound" data-sound='sas' class="sound-icon" style="width: 40px; height: 40px; cursor: pointer; object-fit: contain;"><br>
         <a href='https://lucasemanoeldeoliveira.github.io/Hamburgueria/' target="_blank"><span class='highlight_2 external-link'>HAMBURGERIA WEBSITE</span></a>
@@ -233,6 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: new Audio('./audios/sans_transform.mp3'),
             badTime: new Audio('./audios/bad_time.mp3')
         },
+        mm2: {
+            shoot: new Audio('./audios/mm2Shooting.mp3'),
+            win: new Audio('./audios/mm2Win.mp3')
+        },
         burguer: {
             nomNomNom: new Audio('./audios/nomnomnom.mp3'),
             chezburguer: new Audio('./audios/chezburguer.mp3')
@@ -315,6 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     playSound(sounds.sas.initial);
+                    timePlayed++;
+                }
+            } else if (info === 'mm2') {
+                if (timePlayed >= 4) {
+                    playSound(sounds.mm2.win);
+                    timePlayed = 0;
+                } else {
+                    playSound(sounds.mm2.shoot);
                     timePlayed++;
                 }
             } else if (info === 'burguer') {
