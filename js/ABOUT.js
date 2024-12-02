@@ -252,10 +252,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const playSound = (audio) => {
-        audio.currentTime = 0;
-        audio.play();
+        if (audio && typeof audio.play === 'function') {
+            audio.currentTime = 0;
+            audio.play().catch(error => {
+                console.error('Erro ao tentar tocar o áudio:', error);
+            });
+        } else {
+            console.log('Áudio não existe ou não pode ser reproduzido.');
+        }
     };
-
+    
     const triggerGasterEffect = (icon) => {
         const smallImg = document.createElement('img');
         smallImg.src = 'images/EASTEREGGS/sas/Gaster/Gaster_1.svg';
