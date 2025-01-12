@@ -1,0 +1,964 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'default-font';
+    src: url('fonts/UniSansHeavy.otf') format('woff2');
+}
+
+:root {
+    --color0: #474747;
+    --color1: #2d2d2d;
+    --color2: #191919;
+    --color3: #151515;
+    --color4: #0c0c0c;
+    --contrast_color: #e3e3e3;
+    --hover_color: #c8c8c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.1s ease;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: block;
+    padding: 40px;
+    background: linear-gradient(to right, var(--color1), var(--color2) 40%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.477);
+}
+
+header > #navegation-container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+}
+#logo-container > h1 {
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(3vw, 3em, 3.5vw);
+    margin: 0px 20px;
+    color: white;
+}
+#logo-container > img {
+    width: auto;
+    height: 50px;
+    filter: brightness(5);
+}
+
+#nav-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+#nav-container > nav {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+}
+#nav-container > nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nav-container > nav > ul > button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(1vw, 1.2em, 3.5vw);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+#nav-container > nav > ul > button:hover {
+    cursor: pointer;
+    color: var(--hover_color);
+}
+
+#decoration-balls {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    width: auto;
+}
+#decoration-balls > .ball {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    animation: pulse 1s infinite;
+}
+
+.ball.selected {
+    transform: scale(1.2);
+}
+
+
+
+/* ################ MAIN STYLYZED CSS ################ */
+
+#upper-container {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    background-color: var(--color4);
+}
+
+#upper-container > #background-banner-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 90%;
+}
+
+#upper-container > #background-banner-container > img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    mask-image: linear-gradient(to left, black 95%, transparent 100%),
+                linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-composite: intersect;
+}
+
+#upper-container > #background-banner-container > #text-content {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 30px;
+    z-index: 2;
+}
+
+#background-banner-container > #text-content > h1 {
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    color: transparent;
+    text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.239);
+    font-size: clamp(6vw, 7em, 8vw);
+    -webkit-text-stroke: 3px rgb(255, 255, 255);
+}
+
+#background-banner-container > #text-content > p {
+    color: rgb(255, 255, 255);
+    font-size: clamp(1vw, 2em, 3vw);
+    max-width: 900px;
+    min-width: 200px;
+}
+
+#background-banner-container > #text-content > #buttons-text-content {
+    display: flex;
+    width: auto;
+    margin: 30px 0px;
+    gap: 30px;
+}
+
+#text-content > #buttons-text-content > button {
+    padding: 20px 70px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.201);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(1em, 1.5vw, 2em);
+    transition: 200ms;
+}
+#text-content > #buttons-text-content > button:hover {
+    background-color: var(--hover_color);
+    cursor: pointer;
+    transform: scale(1.05);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.201);
+}
+
+#change-theme-container {
+    width: 10%;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#change-theme-container > .ball {
+    width: 50px;
+    height: 50px;
+
+    outline: white 2px solid;
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+
+    border-radius: 50%;
+    background-color: var(--color4);
+    transition: transform 1s ease;
+}
+#change-theme-container > .ball:hover {
+    cursor: pointer;
+}
+#change-theme-container > .ball > img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+#main-container {
+    background-color: var(--color4);
+    width: 100%;
+    height: auto;
+}
+
+#infos-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.info-container {
+        display: flex;
+    margin: 100px 30px;
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.info-container.inverted {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.info-container > img {
+    width: auto;
+    height: 450px;
+    margin: 30px;
+    animation: info_image_animation 10s infinite;
+}
+.info-container > #text-content {
+    max-width: 100%;
+    position: relative;
+    color: white;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.info-container > #text-content > h1 {
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    font-size: clamp(4vw, 5em, 9vw);
+}
+.info-container > #text-content > h2 {
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    font-size: clamp(2vw, 3em, 4vw);
+    text-decoration: underline;
+}
+.info-container > #text-content > p {
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1vw, 2em, 3vw);
+    font-weight: bold;
+}
+
+
+/* ################ BOTS TOPIC CSS ################ */
+
+
+#bot-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+#bot-container > .bot-infos-container {
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 10px;
+    height: auto;
+    background-color: var(--color1);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.bot-infos-container:hover {
+    transform: translateY(-5px);
+}
+.bot-infos-container > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.bot-infos-container > #text-content {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+.bot-infos-container > #text-content > h1 {
+    font-size: clamp(1vw, 2em, 4vw);
+}
+.bot-infos-container > #text-content > p {
+    font-size: clamp(0.5vw, 1em, 1.5vw);
+    max-width: 300px;
+}
+
+
+/* ################ SERVICES TOPIC CSS ################ */
+
+.service-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+.service-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0px;
+    border: 1px solid var(--color4);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color3);
+}
+.service-section > h1 {
+    width: 100%;
+    font-size: clamp(1vw, 2em, 3vw);
+    text-shadow: 0px 5px 0.1px var(--color3);
+    padding: 20px;
+    background-color: var(--color2);
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+.dropdown-container {
+    padding: 10px 20px;
+}
+.dropdown {
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: max-height 1s ease;
+}
+.dropdown-header {
+    padding: 15px;
+    font-size: clamp(1vw, 1em, 2vw);
+    cursor: pointer;
+    text-align: center;
+}
+.dropdown-header::after {
+    content: ' ⤸';
+}
+.dropdown-header:hover {
+    color: var(--hover_color);
+}
+.dropdown-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.dropdown-content > p {
+    display: block;
+    color: white;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding: 5px 0px;
+}
+.dropdown-content > p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ################ SLIDER CSS ################ */
+
+.slider-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+    max-width: 100%;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-container::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px; 
+}
+.slider-container::-webkit-scrollbar-thumb {
+    background: var(--color1);
+    border-radius: 8px;
+}
+.slider-container:-webkit-scrollbar-thumb:hover {
+    background: var(--hover_color);
+}
+.card {
+    flex-shrink: 0;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.146);
+
+    border: 3px solid white;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-content > h1 {
+    text-align: center;
+    font-size: clamp(1vw, 2em, 3vw);
+}
+.card-content > h2 {
+    text-align: center;
+    font-size: clamp(0.3vw, 1em, 2vw);
+    margin-bottom: 30px;
+}
+.card-content > p {
+    font-size: clamp(0.9vw, 1em, 1.1vw);
+    color: #ffffff;
+}
+.card-content > .card-commands {
+    margin: 15px 0px;
+}
+.card-content > .card-commands > li {
+    font-size: 0.5em;
+    margin: 10px 0px;
+}
+.arrowTemplates {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);  /* Centraliza verticalmente */
+    z-index: 10;
+    padding: 10px;
+}
+
+.arrowTemplates.left {
+    left: 10px;
+}
+.arrowTemplates.right {
+    right: 10px;
+}
+
+
+
+
+
+
+
+#feedback-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.feedback-image {
+    max-width: 100%;
+    height: auto;
+    filter: opacity(50%) invert();
+}
+
+.feedback-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 1.2em;
+    max-width: 80%;
+    transition: opacity 5s ease, transform 2s ease;
+}
+.feedback-card {
+    display: none;
+}
+.feedback-card.active {
+    display: block;
+}
+.feedback-card > p {
+    margin: 0;
+    font-size: clamp(0.5vw, 1em, 1.5vw);
+    font-style: italic;
+}
+.feedback-card > span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: right;
+    font-size: clamp(0.5vw, 1em, 1.5vw);
+}
+.indicator-container {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+}
+.indicator {
+    width: clamp(6px, 0.8vw, 10px);
+    height: clamp(6px, 0.8vw, 10px);
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.indicator.active {
+    background-color: white;
+    transform: scale(1.3);
+}
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+.left-arrow {
+    margin-right: 20px;
+}
+.right-arrow {
+    margin-left: 20px;
+}
+.indicator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+
+
+
+
+/* ################ BOTTOM CONTAINER CSS ################ */
+
+#bottom-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color4);
+}
+
+#bottom-container > h1 {
+    text-align: center;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.386);
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    font-size: clamp(5vw, 6em, 7vw);
+    color: white;
+}
+#faq-container {
+    max-width: 100vw;
+    overflow-x: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+}
+#faq-container > .faq-card {
+    max-width: 400px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; 
+    width: 100%;
+    scroll-snap-align: center;
+}
+.faq-card > .text-content {
+    padding: 20px;
+    border-radius: 30px;
+    background-color: var(--color3);
+    color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.faq-card > .text-content > h1 {
+    font-size: clamp(1vw, 3em, 3vw);
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.faq-card > .text-content > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(0.9vw, 1em, 1.5vw);
+}
+.faq-card > button {
+    margin: 3px 0px;
+    width: 100%;
+    height: 50px;
+
+    color: white;
+    font-family: 'default-font', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(1vw, 2.1em, 2.9vw);
+
+    border: none;
+    border-radius: 30px;
+    background-color: var(--color3);
+
+    transition: all 0.5s ease;
+}
+.faq-card > button:hover {
+    cursor: pointer;
+    background-color: var(--hover_color);
+}
+
+
+/* ################ VARS CSS ################ */
+
+.dropdown-content::-webkit-scrollbar {
+    width: 5px;
+}
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--color1);
+    border-radius: 8px;
+}
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: var(--hover_color);
+}
+.dropdown.active .dropdown-content {
+    max-height: 500px;
+    overflow-y: auto;
+    transition: max-height 1s ease;
+}
+
+.tooltip-trigger {
+    position: relative;
+}
+.tooltip-container {
+    position: absolute;
+    padding: 15px;
+    background-color: var(--color2);
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9em;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.8); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.channel {
+    background-color: #3c4270;
+    border-radius: 5px;
+    padding: 1px 7px;
+}
+.channel:hover {
+    cursor: pointer;
+    background-color: #5865f2;
+}
+.channel::before {
+    content: '# ';
+}
+
+.contrast {
+    color: var(--contrast_color);
+}
+
+.link-button::after {
+    content: ' ⤤';
+}
+
+.pizza {
+    position: absolute;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    z-index: 999999;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3132/3132693.png');
+    background-size: cover;
+    animation: fall 4s infinite linear;
+}
+
+@media (max-width: 768px) {
+    header {
+        background: linear-gradient(to bottom, var(--color1), var(--color2) 80%);
+    }
+    
+    header > #navegation-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #logo-container > h1 {
+        font-size: clamp(5vw, 7em, 7.5vw);
+        margin: 0px 10px;
+    }
+
+    #nav-container > nav {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    #decoration-balls {
+        display: none;
+    }
+
+    #upper-container > #background-banner-container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: 100%;
+    }
+
+    #upper-container > #background-banner-container > img {
+        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
+
+    #upper-container > #background-banner-container > #text-content {
+        text-align: center;
+        margin: 0;
+    }
+    #background-banner-container > #text-content > h1 {
+        font-size: clamp(10vw, 15em, 18vw);
+        -webkit-text-stroke: 3px rgb(255, 255, 255);
+    }
+    #background-banner-container > #text-content > p {
+        font-size: clamp(4vw, 4em, 3vw);
+    }
+
+    #text-content > #buttons-text-content {
+        justify-content: center;
+    }
+    #text-content > #buttons-text-content > button {
+        padding: 20px 40px;
+    }
+
+    #change-theme-container {
+        width: 100%;
+        z-index: 3;
+        bottom: 22%;
+        position: absolute;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    #change-theme-container > .ball {
+        width: 30px;
+        height: 30px;
+    }
+
+    .info-container > #text-content > h1 {
+        font-family: 'default-font', Arial, Helvetica, sans-serif;
+        font-size: clamp(7vw, 8em, 10vw);
+    }
+    .info-container > #text-content > h2 {
+        font-family: 'default-font', Arial, Helvetica, sans-serif;
+        font-size: clamp(2vw, 3em, 7vw);
+        text-decoration: underline;
+    }
+    .info-container > #text-content > p {
+        margin-top: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(1vw, 2em, 4vw);
+        font-weight: bold;
+    }
+
+    .info-container {
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+    }
+    .info-container > #text-content {
+        margin: 0px;
+    }
+
+    .info-container > img {
+        z-index: -1;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        filter: opacity(10%);
+        animation: pulse 30s infinite;
+    }
+
+    #bot-container > .bot-infos-container {
+        width: calc(70% - 20px);
+    }
+
+    .bot-infos-container > #text-content > h1 {
+        font-size: clamp(1vw, 2em, 10vw);
+    }
+    
+    .bot-infos-container > #text-content > p {
+        font-size: clamp(0.5vw, 1em, 10vw);
+    }
+
+    .service-container {
+        flex-wrap: wrap;
+    }
+    .service-container {
+        gap: 5px;
+    }
+    .service-section > h1 {
+        font-size: clamp(1vw, 2em, 6vw);
+        text-shadow: 0px 5px 0.1px var(--color4);
+    }
+    .dropdown-header {
+        font-size: clamp(1vw, 2em, 4vw);
+    }
+
+    .card {
+        width: 200px;
+        height: 450px;
+    }
+    .card-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-content > h1 {
+        font-size: clamp(5vw, 6em, 10vw);
+    }
+    .card-content > h2 {
+        font-size: clamp(2vw, 3em, 5vw);
+    }
+    .card-content > p {
+        font-size: clamp(1vw, 3em, 4vw);
+        color: #ffffff;
+    }
+    .card-content > .card-commands {
+        margin: 15px 0px;
+    }
+    .card-content > .card-commands > li {
+        font-size: 0.9em;
+        margin: 10px 0px;
+    }
+
+    #feedback-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 300px;
+        height: 200px;
+    }
+    .feedback-text-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .feedback-card > p {
+        font-size: clamp(2vw, 3em, 4vw);
+    }
+    .feedback-card > span {
+        font-size: clamp(1vw, 2em, 3.55vw);
+    }
+
+    #faq-container {
+        gap: 20px;
+    }
+    #faq-container > .faq-card {
+        max-width: 500px;
+        min-height: 350px;
+        margin: 10px 0;
+    }
+    .faq-card > .text-content > h1 {
+        font-size: clamp(4vw, 5em, 6vw);
+    }
+    .faq-card > .text-content > p {
+        margin: 20px 0px;
+        font-size: clamp(1vw, 1em, 3.5vw); 
+    }
+    .faq-card > button {
+        text-align: center;
+        height: 25px;
+        font-size: clamp(0.1vw, 1.8em, 5.5vw);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.4
+    } to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    } 50% {
+        transform: scale(1.2);
+    } 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes info_image_animation {
+    0% {
+        transform: rotate(5deg) translateY(10%)
+    } 50% {
+        transform: rotate(-5deg) translateY(-5%)
+    } 100% {
+        transform: rotate(5deg) translateY(10%)
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
